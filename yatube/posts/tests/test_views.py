@@ -247,6 +247,10 @@ class PostsPagesTests(TestCase):
         self.assertFalse(boolean2)
 
     def test_posts_follow_unfollow(self):
+        """
+        Проверка существования постов авторов, на которых подписался
+        в ленте
+        """
         self.authorized_client.get(reverse(
             "posts:profile_follow",
             kwargs={"username": "auth2"})
